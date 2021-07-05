@@ -1,0 +1,964 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff5eb;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none !important;
+}
+
+/* start header css is here */
+
+.header {
+    background-color: #fff;
+    padding: 15px 30px;
+}
+
+.header a {
+    font-size: 15px;
+    font-weight: 600;
+    color: #3c457c;
+}
+
+.header .lft img {
+    max-width: 150px;
+}
+
+.header .rght {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-accnt-drop button {
+    color: #3b467a;
+}
+
+.header .rght .dropdown-toggle .icon-fr-mobile {
+    display: none;
+}
+
+.nav-accnt-drop button:hover {
+    color: #3b467a;
+    background-color: #fff;
+}
+
+.nav-accnt-drop .dropdown-menu ul {
+    padding: 8px 0;
+    margin: 0;
+}
+
+.nav-accnt-drop .dropdown-menu ul a {
+    padding: 3px 15px;
+    display: block;
+    width: 100%;
+}
+
+.header .rght .dropdown-toggle {
+    padding: 8px 15px;
+    text-transform: capitalize;
+    font-size: 15px;
+}
+
+.nav-accnt-drop .dropdown-menu .dropdown-item:hover {
+    background-color: #efefef;
+    color: #007bff;
+}
+
+.nav-accnt-drop .dropdown-item.active, .nav-accnt-drop .dropdown-item:active {
+    background-color: #efefef;
+    color: #007bff;
+}
+
+.nav-accnt-drop .dropdown-menu {
+    background-color: white;
+    box-shadow: 0 0 10px #d8d8d8;
+    border-radius: 5px;
+    min-width: 162px;
+}
+
+.nav-accnt-drop button i {
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+.nav-accnt-drop button::after {
+    display: none;
+}
+
+.nav-accnt-drop button.focus, .nav-accnt-drop button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.header .home-icon-mn a {
+    padding: 0 10px;
+    font-size: 25px;
+}
+
+.nav-accnt-drop .dropdown-menu.show {
+    top: 12px !important;
+}
+
+/* end header css is here */
+
+/* start common css is here */
+
+.small-white-bx {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.small-white-bx-cntnt {
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 60px;
+    background-color: #fff;
+}
+
+.mn-cntnt .logo {
+    text-align: center;
+    padding: 25px;
+}
+
+.btn, button {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 35px;
+    display: block;
+    max-width: max-content;
+    border-radius: 50px;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.orange-btn {
+    background-color: #ffbd66;
+}
+
+.blue-btn {
+    background-color: #668cf6;
+}
+
+.btn:hover, button:hover {
+    background-color: #3c4876;
+    transition: 0.5s;
+    color: #fff;
+}
+
+.cmn-input {
+    border: 1px solid #d0d0d0;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.mn-cntnt .logo img {
+    max-width: 165px;
+}
+
+.breadcumb-sctn ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 25px 0;
+}
+
+.breadcumb-sctn ul li {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.breadcumb-sctn ul li a {
+    color: #007bff;
+    text-transform: capitalize;
+}
+
+.breadcumb-sctn ul li i {
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+/* start custom checkbox css */
+
+.custom-checkbox {
+    padding-left: 0;
+}
+
+.custom-checkbox-input {
+    width: 16px;
+    height: 16px;
+    box-shadow: none !important;
+}
+
+.custom-checkbox-label::before {
+    width: 16px;
+    height: 16px;
+    top: 4px;
+    left: 0;
+    border-radius: 2px !important;
+    box-shadow: none !important;
+}
+
+.custom-checkbox-label::after {
+    width: 16px;
+    height: 16px;
+    top: 4px;
+    left: 0;
+    box-shadow: none !important;
+}
+
+.custom-checkbox-label {
+    padding: 0 0 0 25px;
+}
+
+.custom-checkbox .custom-checkbox-input:checked~.custom-checkbox-label::after {
+    background-image: url(../images/check.png);
+    background-size: 10px;
+    background-color: white;
+    border: #adb5bd solid 1px;
+    font-size: 13px;
+    -webkit-text-stroke: 1px #fff;
+    box-shadow: none !important;
+}
+
+.custom-checkbox-input:checked~.custom-checkbox-label::before {
+    color: #fff;
+    border-color: #fff;
+    background-color: #fff;
+    border: none;
+    box-shadow: none !important;
+}
+
+/* end custom checkbox css */
+
+/* start table css is here */
+
+.cmn-table table tbody tr:hover {
+    color: #212529;
+    background-color: #f8f8ff;
+}
+
+.cmn-table th {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    color: #3c457c;
+    text-transform: capitalize;
+    border-top: none;
+    border-bottom: 1px solid #dee2e6 !important;
+    vertical-align: top !important;
+}
+
+.cmn-table td {
+    font-size: 14px;
+    text-transform: capitalize;
+    color: #7b7b7b;
+    padding: 18px .75rem 18px .75rem;
+}
+
+.cmn-table {
+    max-height: 500px;
+    overflow: auto;
+}
+
+.cmn-table thead tr:nth-child(1) th {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.cmn-table::-webkit-scrollbar {
+    width: 7px;
+}
+
+.cmn-table::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white;
+    border-radius: 10px;
+}
+
+.cmn-table::-webkit-scrollbar-thumb {
+    background: #b9bec385;
+    border-radius: 10px;
+}
+
+.action-mn-td a {
+    padding: 0 5px;
+    font-size: 16px;
+}
+
+.action-mn-td a:first-child {
+    padding-left: 0;
+}
+
+.action-mn-td a:last-child {
+    padding-right: 0;
+}
+
+/* end table css is here */
+
+/* start modal css is here */
+
+.common-modal .modal-dialog {
+    margin: 1.75rem auto !important;
+    max-width: 550px;
+}
+
+.common-modal {
+    background-color: #3c447c6b;
+}
+
+.common-modal .modal-content {
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.common-modal .modal-dialog .modal-content .modal-body {
+    padding: 15px 0 0 0 !important;
+}
+
+.common-modal .modal-content button.close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    background-color: #434242;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    display: block;
+    min-width: 22px;
+    font-weight: 300;
+    max-width: 22px;
+    padding: 0 5px;
+}
+
+.common-modal .modal-content h4.modal-hdng {
+    font-weight: bold;
+    color: #3c447c;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+.common-modal .modal-content .option-bx {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.mdl-inpt-bx {
+    background-color: white;
+    border: 1px solid #d7d7d7;
+    box-shadow: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 12px;
+    width: 100%;
+    border-radius: 5px;
+    color: #1d1d1d;
+}
+
+.common-modal .modal-content textarea.mdl-inpt-bx {
+    height: 120px;
+    resize: none;
+}
+
+.mdl-inpt-bx::placeholder {
+    color: #8f8d8d;
+}
+
+.common-modal .modal-content .option-bx .hdng {
+    max-width: 142px;
+    min-width: 142px;
+}
+
+.common-modal .option-bx .hdng p {
+    margin: 5px 0 0 0;
+    font-weight: 500;
+    color: #3c447c;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+.common-modal .modal-content .option-bx .cntnt {
+    width: 75%;
+}
+
+.common-modal .modal-content .submit-btn-mn {
+    text-align: center;
+    padding: 30px 0 15px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.common-modal .modal-content .submit-btn-mn .submit-btn i {
+    margin: 0 3px;
+    font-size: 13px;
+}
+
+.common-modal .modal-content .submit-btn-mn .submit-btn {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    border: none !important;
+    padding: 10px 16px;
+    text-decoration: none;
+    border-radius: 50px;
+    width: 135px;
+    display: block;
+    margin: 0 5px;
+}
+
+.common-modal .modal-content .submit-btn-mn .blue-btn {
+    background-color: #668cf6d4;
+}
+
+.common-modal .custom-checkbox-label {
+    padding: 0 0 0 25px;
+    color: #8f8d8d;
+}
+
+.common-modal .custom-checkbox {
+    margin-bottom: 7px;
+}
+
+.approved-plan-chckbx-mn .hdng p {
+    margin: 0 0 10px 0;
+    font-weight: 500;
+    color: #3c447c;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+.selectdiv {
+    position: relative;
+}
+
+.selectdiv select.modal-select-bx {
+    background-color: white;
+    border: 1px solid #d7d7d7;
+    box-shadow: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+    padding: 10px 12px;
+    width: 100%;
+    border-radius: 5px;
+    color: #8d8d8d;
+    text-align: left;
+}
+
+.selectdiv select.modal-select-bx option {
+    font-size: 14px;
+    color: #757575;
+}
+
+.selectdiv:after {
+    content: '\f078';
+    font: normal normal normal 17px/1 FontAwesome;
+    color: #a1a0a0;
+    top: 2px;
+    bottom: 2px;
+    padding: 6px 6px;
+    right: 2px;
+    position: absolute;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    font-size: 12px;
+}
+
+.selectdiv select::-ms-expand {
+    display: none;
+}
+
+.common-modal .cntnt-dual-bx {
+    display: flex;
+}
+
+.common-modal .cntnt-dual-bx input:first-child {
+    margin-right: 10px;
+}
+
+/* end modal css is here */
+
+/* end common css is here */
+
+/* start login page css is here */
+
+.login-pg .small-white-bx {
+    max-width: 500px;
+    padding: 30px 25px 40px 25px;
+}
+
+.login-pg form h1 {
+    font-size: 35px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #3c4876;
+    text-align: center;
+    margin: 0 0 30px 0;
+}
+
+.login-btn {
+    margin-top: 10px;
+    min-width: 150px;
+}
+
+/* end login page css is here */
+
+/* start dashboard page css is here */
+
+.optn-bx-cntnt img {
+    width: auto;
+    height: auto;
+    max-height: 33px;
+}
+
+.optn-bx-cntnt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    border: 2px solid #3c4876;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    min-height: 122px;
+    transition: 0.5s;
+    background-color: #fff;
+}
+
+.optn-bx-cntnt:hover {
+    background-color: #fdbd66;
+    transition: 0.5s;
+}
+
+.optn-bx-mn-a .optn-bx-cntnt:hover img.bx-icon {
+    filter: brightness(9);
+}
+
+.optn-bx-mn-a .optn-bx-cntnt:hover h3.bx-hdng {
+    color: #fff;
+}
+
+.optn-bx-cntnt h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #38457b;
+    line-height: 22px;
+    text-transform: capitalize;
+    margin: 10px 0 0 0;
+    line-height: 20px;
+}
+
+.admnstratr-dshbrd-pg .heading {
+    text-align: center;
+    padding: 15px 0 0 0;
+}
+
+.admnstratr-dshbrd-pg .heading p {
+    color: #434d81;
+    margin: 0;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.admnstratr-dshbrd-pg .heading h1 {
+    font-size: 25px;
+    color: #434d81;
+    font-weight: 700;
+    margin: 10px 0 22px 0;
+    text-transform: capitalize;
+}
+
+.manage-users-pg .optn-bx-cntnt {
+    min-height: 138px;
+}
+
+/* end dashboard page css is here */
+
+/* start client organization page css is here */
+
+.search-sctn {
+    margin: 0 0 25px 0;
+}
+
+.search-sctn-mn-row {
+    align-items: center;
+}
+
+.search-sctn .srch-bx {
+    max-width: 250px;
+    position: relative;
+}
+
+.search-sctn .srch-bx input {
+    padding: 20px;
+}
+
+.search-sctn .rght a {
+    color: #007bff;
+    text-transform: capitalize;
+}
+
+.search-sctn .srch-bx button {
+    position: absolute;
+    top: 0;
+    right: 12px;
+    bottom: 0;
+    padding: 0;
+    color: #6b6b6b;
+    background: unset !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.dataTable-white-bx .small-white-bx-cntnt {
+    padding: 15px;
+}
+
+.dataTable-white-bx {
+    max-width: 700px;
+}
+
+.checkbx-td-mn {
+    display: flex;
+    align-items: center;
+}
+
+.checkbx-td-mn .custom-checkbox {
+    height: 16px;
+    width: 16px;
+    min-height: 16px;
+}
+
+.checkbx-td-mn .custom-checkbox-label::before {
+    top: 0;
+}
+
+.checkbx-td-mn .custom-checkbox-label::after {
+    top: 0;
+}
+
+.checkbx-td-mn span {
+    margin-left: 10px;
+}
+
+/* end client organization page css is here */
+
+/* strat patients page css is here */
+
+.patients-pg .small-white-bx {
+    max-width: 822px;
+}
+
+.action-btn-mn {
+    display: flex;
+}
+
+.patients-pg .action-mn-td a {
+    padding: 0 4px;
+    font-size: 14px;
+}
+
+.patients-pg td.plan-td, .patients-pg th.plan-th {
+    min-width: 95px;
+}
+
+.datepicker td, .datepicker th {
+    width: 40px;
+    height: 25px;
+    font-size: 13px;
+}
+
+.datepicker-mn-bx .datepicker {
+    padding: 0;
+}
+
+.datepicker-mn-bx .datepicker-dropdown {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.datepicker-mn-bx .input-group-append {
+    position: absolute;
+    right: 5px;
+    top: 1px;
+    bottom: 1px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 8px 7px;
+    color: #5d5d5d;
+}
+
+/* end patients page css is here */
+
+/* start quick view page css is here */
+
+.quick-view-pg .mn-cntnt-bx {
+    max-width: calc(100% - 60px);
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+.top-form-section {
+    display: flex;
+    justify-content: space-between;
+}
+.top-form-section .selectdiv select.modal-select-bx {
+    padding: 8px 12px;
+}
+.top-form-section .mdl-inpt-bx {
+    padding: 8px 12px;
+}
+.form-fld-inline-label label {
+    margin: 0;
+}
+.form-fld-inline-label {
+    display: flex;
+    align-items: center;
+}
+.quick-view-pg .form-fld-mn .datepicker-mn-bx {
+    margin-bottom: 0;
+}
+.form-fld-inline-label label {
+    margin: 0 12px 0 0;
+    font-size: 14px;
+    color: #464646;
+    font-weight: 500;
+}
+.top-form-section .form-fld-mn {
+    width: 15.5%;
+}
+.chat-sctn .small-white-bx {
+    max-width: 100%;
+    box-shadow: 0 0 8px #b9b9b92e;
+    border-radius: 5px;
+    background-color: white;
+    padding: 15px;
+    height: 100%;
+}
+.chat-sctn .small-white-bx img {
+    width: 100%;
+}
+.chat-sctn .small-white-bx h4.hdng {
+    font-size: 16px;
+    color: #3c457c;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.chat-sctn .small-white-bx .checkbox-mn {
+    display: flex;
+    justify-content: space-between;
+}
+.chat-sctn .small-white-bx .custom-checkbox-label::after {
+    width: 12px;
+    height: 12px;
+}
+.chat-sctn .small-white-bx .custom-checkbox-label::before {
+    width: 12px;
+    height: 12px;
+}
+.chat-sctn .small-white-bx .custom-checkbox .custom-checkbox-input:checked~.custom-checkbox-label::after {
+    background-size: 8px;
+}
+.chat-sctn .small-white-bx .custom-checkbox-label {
+    padding: 0 0 0 17px;
+    font-size: 13px;
+    color: #909090;
+}
+.chat-sctn .small-white-bx .custom-checkbox {
+    margin-right: 5px;
+}
+
+
+
+
+/* end quick view page css is here */
+
+
+/* ===================== start responsive is here ========================== */
+
+@media screen and (max-width:1199px) {
+    .top-form-section .form-fld-inline-label label {
+        margin: 0 6px 0 0;
+        font-size: 13px;
+    }
+    .top-form-section .datepicker-mn-bx .input-group-append {
+        padding: 8px 3px;
+    }
+    .top-form-section .mdl-inpt-bx {
+        padding: 8px 8px;
+    }
+    .top-form-section .selectdiv select.modal-select-bx {
+        padding: 8px 8px;
+    }
+    .chat-sctn .small-white-bx .checkbox-mn {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .chat-sctn .small-white-bx .custom-checkbox {
+        margin: 5px 10px 0 0;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .patients-pg .small-white-bx {
+        max-width: 90%;
+    }
+    .top-form-section {
+        flex-wrap: wrap;
+    }
+    .top-form-section .form-fld-mn {
+        width: 32%;
+        margin: 0 0 15px 0;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .admnstratr-dshbrd-pg .small-white-bx {
+        max-width: 90%;
+    }
+    .small-white-bx {
+        max-width: 90%;
+    }
+    .login-pg form h1 {
+        font-size: 25px;
+        margin: 0 0 15px 0;
+    }
+    .optn-bx-cntnt h3 {
+        font-size: 16px;
+    }
+    .optn-bx-cntnt img {
+        max-height: 42px;
+    }
+    .optn-bx-cntnt {
+        min-height: 142px;
+        text-align: center;
+        margin: 5px;
+    }
+    .admnstratr-dshbrd-pg .heading h1 {
+        font-size: 22px;
+    }
+    .manage-users-pg .optn-bx-cntnt {
+        min-height: 170px;
+    }
+    .cmn-table table.table {
+        min-width: 700px;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .login-pg .small-white-bx {
+        max-width: 90%;
+    }
+    .header {
+        padding: 15px 15px;
+    }
+    .header .lft img {
+        max-width: 130px;
+    }
+    .header .rght .dropdown-toggle span {
+        display: none;
+    }
+    .header .rght .dropdown-toggle .icon-fr-mobile {
+        display: block;
+    }
+    .optn-bx-col {
+        max-width: 50%;
+    }
+    .optn-bx-cntnt h3 {
+        margin: 15px 0 0 0;
+    }
+    .cmn-input {
+        padding: 15px 15px;
+        margin-bottom: 15px;
+    }
+    .breadcumb-sctn ul {
+        justify-content: center;
+    }
+    .search-sctn-mn-row {
+        flex-direction: column-reverse;
+    }
+    .search-sctn .srch-bx {
+        margin: 0 auto;
+    }
+    .search-sctn-mn-row .rght {
+        text-align: center !important;
+        margin-bottom: 15px;
+    }
+    .common-modal .modal-content h4.modal-hdng {
+        font-size: 17px;
+        margin: 8px 0 15px 0;
+    }
+    .common-modal .modal-content .option-bx {
+        display: block;
+    }
+    .common-modal .modal-content .option-bx .cntnt {
+        width: 100%;
+        margin: 8px 0 0 0;
+    }
+    .common-modal .modal-content .option-bx .hdng {
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .common-modal .modal-content .submit-btn-mn .submit-btn {
+        font-size: 14px;
+        padding: 8px 18px;
+        width: auto;
+        display: block;
+        margin: 0 3px;
+    }
+    .common-modal .modal-dialog {
+        max-width: 95%;
+    }
+    .common-modal .modal-content {
+        padding: 18px;
+    }
+    .datepicker td, .datepicker th {
+        width: 39px;
+        height: 30px;
+    }
+    .top-form-section .form-fld-mn {
+        width: 48%;
+        margin: 0 0 15px 0;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .optn-bx-col {
+        max-width: 100%;
+    }
+    .top-form-section .form-fld-inline-label label {
+        min-width: 50px;
+    }
+    .quick-view-pg .form-fld-inline-label {
+        width: 100%;
+    }
+    .quick-view-pg .form-fld-mn .datepicker-mn-bx {
+        width: 100%;
+    }
+}
+
+/* ===================== end responsive is here ========================== */
