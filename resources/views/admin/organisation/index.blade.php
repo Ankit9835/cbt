@@ -57,100 +57,7 @@
 
                                         <h4 class="modal-hdng">Create new client organization</h4>
 
-                                        <div class="modal-body">
-
-                                            <div class="option-bx">
-                                                <div class="hdng">
-                                                    <p>Organization</p>
-                                                </div>
-                                                <div class="cntnt">
-                                                    <input type="text" placeholder="Organization" class="mdl-inpt-bx">
-                                                </div>
-                                            </div>
-
-                                            <div class="option-bx">
-                                                <div class="hdng">
-                                                    <p>Organization ID</p>
-                                                </div>
-                                                <div class="cntnt">
-                                                    <input type="text" placeholder="Organization ID"
-                                                        class="mdl-inpt-bx">
-                                                </div>
-                                            </div>
-
-                                            <div class="option-bx">
-                                                <div class="hdng">
-                                                    <p>Address</p>
-                                                </div>
-                                                <div class="cntnt">
-                                                    <textarea placeholder="Address" class="mdl-inpt-bx"></textarea>
-                                                </div>
-                                            </div>
-
-                                            <div class="option-bx">
-                                                <div class="hdng">
-                                                    <p>Contact Name</p>
-                                                </div>
-                                                <div class="cntnt">
-                                                    <input type="text" placeholder="Contact Name" class="mdl-inpt-bx">
-                                                </div>
-                                            </div>
-
-                                            <div class="option-bx">
-                                                <div class="hdng">
-                                                    <p>Email</p>
-                                                </div>
-                                                <div class="cntnt">
-                                                    <input type="text" placeholder="Email" class="mdl-inpt-bx">
-                                                </div>
-                                            </div>
-
-                                            <div class="approved-plan-chckbx-mn">
-
-                                                <div class="hdng">
-                                                    <p>Approved Plans</p>
-                                                </div>
-
-                                                <div class="checkbox-mn">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox"
-                                                            class="custom-control-input custom-checkbox-input"
-                                                            id="month1" name="month1">
-                                                        <label class="custom-control-label custom-checkbox-label"
-                                                            for="month1">1-Month</label>
-                                                    </div>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox"
-                                                            class="custom-control-input custom-checkbox-input"
-                                                            id="month3" name="month3">
-                                                        <label class="custom-control-label custom-checkbox-label"
-                                                            for="month3">3-Month</label>
-                                                    </div>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox"
-                                                            class="custom-control-input custom-checkbox-input"
-                                                            id="month6" name="month6">
-                                                        <label class="custom-control-label custom-checkbox-label"
-                                                            for="month6">6-Month</label>
-                                                    </div>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox"
-                                                            class="custom-control-input custom-checkbox-input"
-                                                            id="month12" name="month12">
-                                                        <label class="custom-control-label custom-checkbox-label"
-                                                            for="month12">12-Month</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="submit-btn-mn">
-                                                <a href="#" class="submit-btn blue-btn"><i
-                                                        class="fa fa-chevron-left"></i> Clear</a>
-                                                <a href="#" class="submit-btn orange-btn">Create <i
-                                                        class="fa fa-chevron-right"></i></a>
-                                            </div>
-
-                                        </div>
+                                        @include('admin.organisation.modal')
                                     </div>
                                 </div>
                             </div>
@@ -168,8 +75,9 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
+                                    <th>Sr. No</th>
                                     <th>
-                                        <div class="checkbx-td-mn">
+                                        <!-- <div class="checkbx-td-mn">
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox"
                                                     class="custom-control-input custom-checkbox-input" id="ckbCheckAll"
@@ -177,19 +85,24 @@
                                                 <label class="custom-control-label custom-checkbox-label"
                                                     for="ckbCheckAll"></label>
                                             </div>
-                                            <span>Organization</span>
-                                        </div>
+                                            <span>Organization ID</span>
+                                        </div> -->
+                                        Organization ID
                                     </th>
-                                    <th>billing code</th>
-                                    <th>department</th>
-                                    <th>contact</th>
+                                    <th>Organisation Name</th>
+                                    <th>Name</th>
+                                  
                                     <th>action</th>
                                 </tr>
                             </thead>
                             <tbody id="myTable">
+                               @if(count($organisations) > 0)
+                                @php $i = 0; @endphp
+                                @foreach($organisations as $or => $row)
                                 <tr>
+                                    <td>  {{ ($organisations->currentpage()-1) * $organisations->perpage() + $or + 1 }} </td>
                                     <td>
-                                        <div class="checkbx-td-mn">
+                                       <!--  <div class="checkbx-td-mn">
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox"
                                                     class="custom-control-input custom-checkbox-input" id="Checkbox1"
@@ -198,148 +111,38 @@
                                                     for="Checkbox1"></label>
                                             </div>
                                             <span>Organization name</span>
-                                        </div>
+                                        </div> -->
+                                        212345
                                     </td>
-                                    <td>127634</td>
-                                    <td>Police</td>
-                                    <td>34567-12763</td>
+                                    
+                                    <td>{{ $row->organisation_name }}</td>
+                                    <td>{{ $row->name }}</td>
+                                   
                                     <td class="action-mn-td">
                                         <div class="action-btn-mn">
-                                            <a href="#" style="color: #3c4876;"><i class="fa fa-eye"></i></a>
-                                            <a href="#" style="color: #668cf6;"><i class="fa fa-download"></i></a>
-                                            <a href="#" style="color: #ffbd66;"><i class="fa fa-trash"></i></a>
+                                            <a href="#" style="color: #3c4876;" data-toggle="modal" data-target="#exampleModal{{ $row->id }}"><i class="fa fa-eye"></i></a>
+                                             @if($row->is_active == 1)
+                                                  <a href="{{ url('admin/deactivate/organisation/'.$row->id) }}" id = "active" class="text-success"><i class="fa fa-thumbs-up"></i></a>
+                                            @else
+                                                 <a href="{{ url('admin/activate/organisation/'.$row->id) }}" id = "deactive" class="text-danger"><i class="fa fa-thumbs-down"></i></a>
+                                            @endif
+
+                                             <a href="#" style="color: #668cf6;" data-toggle="modal" data-target="#example{{ $row->id }}"><i class="fa fa-pencil"></i></a>
+
+                                            <a href="{{ url('admin/organisation/softdelete/'.$row->id) }}" id="delete" style="color: #ffbd66;"><i class="fa fa-trash"></i></a>
                                         </div>
                                     </td>
                                 </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="checkbx-td-mn">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input custom-checkbox-input" id="Checkbox2"
-                                                    name="Checkbox2">
-                                                <label class="custom-control-label custom-checkbox-label"
-                                                    for="Checkbox2"></label>
-                                            </div>
-                                            <span>Organization name</span>
-                                        </div>
-                                    </td>
-                                    <td>127635</td>
-                                    <td>Police</td>
-                                    <td>34567-12767</td>
-                                    <td class="action-mn-td">
-                                        <div class="action-btn-mn">
-                                            <a href="#" style="color: #3c4876;"><i class="fa fa-eye"></i></a>
-                                            <a href="#" style="color: #668cf6;"><i class="fa fa-download"></i></a>
-                                            <a href="#" style="color: #ffbd66;"><i class="fa fa-trash"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="checkbx-td-mn">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input custom-checkbox-input" id="Checkbox3"
-                                                    name="Checkbox3">
-                                                <label class="custom-control-label custom-checkbox-label"
-                                                    for="Checkbox3"></label>
-                                            </div>
-                                            <span>Organization name</span>
-                                        </div>
-                                    </td>
-                                    <td>127636</td>
-                                    <td>Police</td>
-                                    <td>34567-12768</td>
-                                    <td class="action-mn-td">
-                                        <div class="action-btn-mn">
-                                            <a href="#" style="color: #3c4876;"><i class="fa fa-eye"></i></a>
-                                            <a href="#" style="color: #668cf6;"><i class="fa fa-download"></i></a>
-                                            <a href="#" style="color: #ffbd66;"><i class="fa fa-trash"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="checkbx-td-mn">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input custom-checkbox-input" id="Checkbox4"
-                                                    name="Checkbox4">
-                                                <label class="custom-control-label custom-checkbox-label"
-                                                    for="Checkbox4"></label>
-                                            </div>
-                                            <span>Organization name</span>
-                                        </div>
-                                    </td>
-                                    <td>127637</td>
-                                    <td>Police</td>
-                                    <td>34567-12769</td>
-                                    <td class="action-mn-td">
-                                        <div class="action-btn-mn">
-                                            <a href="#" style="color: #3c4876;"><i class="fa fa-eye"></i></a>
-                                            <a href="#" style="color: #668cf6;"><i class="fa fa-download"></i></a>
-                                            <a href="#" style="color: #ffbd66;"><i class="fa fa-trash"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="checkbx-td-mn">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input custom-checkbox-input" id="Checkbox5"
-                                                    name="Checkbox5">
-                                                <label class="custom-control-label custom-checkbox-label"
-                                                    for="Checkbox5"></label>
-                                            </div>
-                                            <span>Organization name</span>
-                                        </div>
-                                    </td>
-                                    <td>127639</td>
-                                    <td>Police</td>
-                                    <td>34567-12760</td>
-                                    <td class="action-mn-td">
-                                        <div class="action-btn-mn">
-                                            <a href="#" style="color: #3c4876;"><i class="fa fa-eye"></i></a>
-                                            <a href="#" style="color: #668cf6;"><i class="fa fa-download"></i></a>
-                                            <a href="#" style="color: #ffbd66;"><i class="fa fa-trash"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="checkbx-td-mn">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input custom-checkbox-input" id="Checkbox6"
-                                                    name="Checkbox6">
-                                                <label class="custom-control-label custom-checkbox-label"
-                                                    for="Checkbox6"></label>
-                                            </div>
-                                            <span>Organization name</span>
-                                        </div>
-                                    </td>
-                                    <td>127630</td>
-                                    <td>Police</td>
-                                    <td>34567-12760</td>
-                                    <td class="action-mn-td">
-                                        <div class="action-btn-mn">
-                                            <a href="#" style="color: #3c4876;"><i class="fa fa-eye"></i></a>
-                                            <a href="#" style="color: #668cf6;"><i class="fa fa-download"></i></a>
-                                            <a href="#" style="color: #ffbd66;"><i class="fa fa-trash"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-
-
+                                @include('admin.organisation.edit_modal')
+                                 @include('admin.organisation.view_modal')
+                                @endforeach
+                                @else
+                                    No Client Organisation Found
+                                @endif
+                               
                             </tbody>
                         </table>
+                         {{ $organisations->links() }}
                     </div>
 
                     <!-- start table section is here -->

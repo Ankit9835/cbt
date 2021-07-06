@@ -49,60 +49,7 @@
 
                             <!-- start modal is here -->
 
-                            <div class="modal fade common-modal createNewOrganizationModal"
-                                id="createNewOrganizationModal">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-
-                                        <h4 class="modal-hdng">Create new Therapist</h4>
-
-                                        <div class="modal-body">
-
-                                            <div class="option-bx">
-                                                <div class="hdng">
-                                                    <p>Therapist ID</p>
-                                                </div>
-                                                <div class="cntnt">
-                                                    <input type="text" placeholder="Therapist ID"
-                                                        class="mdl-inpt-bx">
-                                                </div>
-                                            </div>
-
-                                            <div class="option-bx">
-                                                <div class="hdng">
-                                                    <p>Name</p>
-                                                </div>
-                                                <div class="cntnt">
-                                                    <div class="cntnt-dual-bx">
-                                                        <input type="text" placeholder="First" class="mdl-inpt-bx">
-                                                        <input type="text" placeholder="Last" class="mdl-inpt-bx">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="option-bx">
-                                                <div class="hdng">
-                                                    <p>Email</p>
-                                                </div>
-                                                <div class="cntnt">
-                                                    <input type="text" placeholder="Email" class="mdl-inpt-bx">
-                                                </div>
-                                            </div>
-
-                                            <div class="submit-btn-mn">
-                                                <a href="#" class="submit-btn blue-btn"><i
-                                                        class="fa fa-chevron-left"></i> Clear</a>
-                                                <a href="#" class="submit-btn orange-btn">Create <i
-                                                        class="fa fa-chevron-right"></i></a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @include('admin.therapist.modal')
 
                             <!-- end modal is here -->
 
@@ -118,7 +65,7 @@
                             <thead>
                                 <tr>
                                     <th>
-                                        <div class="checkbx-td-mn">
+                                       <!--  <div class="checkbx-td-mn">
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox"
                                                     class="custom-control-input custom-checkbox-input" id="ckbCheckAll"
@@ -127,8 +74,10 @@
                                                     for="ckbCheckAll"></label>
                                             </div>
                                             <span>Therapist Id</span>
-                                        </div>
+                                        </div> -->
+                                        Sr. No
                                     </th>
+                                    <th>Therapist ID</th>
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Email</th>
@@ -137,10 +86,11 @@
                             </thead>
                             <tbody id="myTable">
                                 @if(count($therapists) > 0)
-                                @foreach($therapists as $row)
+                                @php $i = 0; @endphp
+                                @foreach($therapists as $th => $row)
                                 <tr>
                                     <td>
-                                        <div class="checkbx-td-mn">
+                                       <!--  <div class="checkbx-td-mn">
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox"
                                                     class="custom-control-input custom-checkbox-input" id="Checkbox1"
@@ -149,19 +99,27 @@
                                                     for="Checkbox1"></label>
                                             </div>
                                             <span>Mike neil</span>
-                                        </div>
+                                        </div> -->
+                                       {{ ($therapists->currentpage()-1) * $therapists->perpage() + $th + 1 }}
                                     </td>
-                                    <td>Kevin</td>
-                                    <td>Roy</td>
-                                    <td class="email-td">kevin.roy@gmail.com</td>
+                                    <td> {{ $row->t_id }} </td>
+                                    <td>{{ $row->first_name }}</td>
+                                    <td>{{ $row->last_name }}</td>
+                                    <td class="email-td">{{ $row->email }}</td>
                                     <td class="action-mn-td">
                                         <div class="action-btn-mn">
-                                            <a href="#" style="color: #3c4876;"><i class="fa fa-eye"></i></a>
-                                            <a href="#" style="color: #668cf6;"><i class="fa fa-download"></i></a>
-                                            <a href="#" style="color: #ffbd66;"><i class="fa fa-trash"></i></a>
+                                            @if($row->is_active == 1)
+                                                  <a href="{{ url('admin/deactivate/therapist/'.$row->id) }}" id = "active" class="text-success"><i class="fa fa-thumbs-up"></i></a>
+                                            @else
+                                                 <a href="{{ url('admin/activate/therapist/'.$row->id) }}" id = "deactive" class="text-danger"><i class="fa fa-thumbs-down"></i></a>
+                                            @endif
+                                          
+                                            <a href="#" style="color: #668cf6;" data-toggle="modal" data-target="#exampleModal{{ $row->id }}"><i class="fa fa-pencil"></i></a>
+                                            <a href="{{ url('admin/therapist/softdelete/'.$row->id) }}" id = "delete" class="text-danger"><i class="fa fa-trash"></i></a>
                                         </div>
                                     </td>
                                 </tr>
+                                @include('admin.therapist.edit_modal')
                                 @endforeach
                                 @else
                                     No Therapist Found

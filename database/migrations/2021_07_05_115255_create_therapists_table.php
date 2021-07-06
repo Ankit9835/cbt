@@ -21,6 +21,7 @@ class CreateTherapistsTable extends Migration
             $table->string('email')->unique();
             $table->integer('is_active')->default(1);
             $table->timestamps();
+            $table->SoftDeletes();
         });
     }
 
