@@ -43,8 +43,9 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="rght text-right">
-                                <a href="#" class="modal-open-link" type="button" data-toggle="modal"
-                                    data-target="#createNewOrganizationModal">Create new Therapist</a>
+                               <!--  <a href="#" class="modal-open-link" type="button" data-toggle="modal"
+                                    data-target="#createNewOrganizationModal">Create new Therapist</a> -->
+                                 <a href="{{ route('therapist.create') }}">Create new Therapist</a>   
                             </div>
 
                             <!-- start modal is here -->
@@ -114,7 +115,7 @@
                                                  <a href="{{ url('admin/activate/therapist/'.$row->id) }}" id = "deactive" class="text-danger"><i class="fa fa-thumbs-down"></i></a>
                                             @endif
                                           
-                                            <a href="#" style="color: #668cf6;" data-toggle="modal" data-target="#exampleModal{{ $row->id }}"><i class="fa fa-pencil"></i></a>
+                                            <a href="{{ url('admin/edit/therapist/'.$row->id) }}" style="color: #668cf6;"><i class="fa fa-pencil"></i></a>
                                             <a href="{{ url('admin/therapist/softdelete/'.$row->id) }}" id = "delete" class="text-danger"><i class="fa fa-trash"></i></a>
                                         </div>
                                     </td>

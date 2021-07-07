@@ -24,7 +24,7 @@ class OrganisationFactory extends Factory
         return [
             //
             'organisation_name' => $this->faker->company(),
-            'organisation_id' => $this->faker->randomElement([123, 456, 879, 568]),
+            'o_id' => $this->faker->randomElement([123, 456, 879, 568]),
             'address' => $this->faker->address(),
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->email,

@@ -41,28 +41,12 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="rght text-right">
-                                <a href="#" class="modal-open-link" type="button" data-toggle="modal"
-                                    data-target="#createNewOrganizationModal">Create new organization</a>
+                               <!--  <a href="#" class="modal-open-link" type="button" data-toggle="modal"
+                                    data-target="#createNewOrganizationModal">Create new organization</a> -->
+                                    <a href="{{ route('organisation.create') }}">Create new organization</a>
                             </div>
 
-                            <!-- start modal is here -->
-
-                            <div class="modal fade common-modal createNewOrganizationModal"
-                                id="createNewOrganizationModal">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-
-                                        <h4 class="modal-hdng">Create new client organization</h4>
-
-                                        @include('admin.organisation.modal')
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- end modal is here -->
+                            
 
                         </div>
                     </div>
@@ -77,16 +61,7 @@
                                 <tr>
                                     <th>Sr. No</th>
                                     <th>
-                                        <!-- <div class="checkbx-td-mn">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input custom-checkbox-input" id="ckbCheckAll"
-                                                    name="ckbCheckAll">
-                                                <label class="custom-control-label custom-checkbox-label"
-                                                    for="ckbCheckAll"></label>
-                                            </div>
-                                            <span>Organization ID</span>
-                                        </div> -->
+                                        
                                         Organization ID
                                     </th>
                                     <th>Organisation Name</th>
@@ -127,14 +102,15 @@
                                                  <a href="{{ url('admin/activate/organisation/'.$row->id) }}" id = "deactive" class="text-danger"><i class="fa fa-thumbs-down"></i></a>
                                             @endif
 
-                                             <a href="#" style="color: #668cf6;" data-toggle="modal" data-target="#example{{ $row->id }}"><i class="fa fa-pencil"></i></a>
+                                             <a href="{{ url('admin/edit/organisation/'.$row->id) }}" style="color: #668cf6;"><i class="fa fa-pencil"></i></a>
 
                                             <a href="{{ url('admin/organisation/softdelete/'.$row->id) }}" id="delete" style="color: #ffbd66;"><i class="fa fa-trash"></i></a>
+
                                         </div>
                                     </td>
                                 </tr>
-                                @include('admin.organisation.edit_modal')
-                                 @include('admin.organisation.view_modal')
+                              
+                                @include('admin.organisation.view_modal') 
                                 @endforeach
                                 @else
                                     No Client Organisation Found

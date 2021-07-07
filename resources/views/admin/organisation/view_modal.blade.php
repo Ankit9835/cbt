@@ -10,7 +10,7 @@
       <div class="modal-body">
         <p>
           
-         <p> <strong> Organisation ID: </strong> &nbsp; {{ $row->organisation_id }} </p>
+         <p> <strong> Organisation ID: </strong> &nbsp; {{ $row->o_id }} </p>
          <p> <strong> Organisation Name: </strong> {{ $row->organisation_name }} </p>
          <p> <strong> Name: </strong> {{ $row->name }} </p>
          <p> <strong> Email: </strong> {{ $row->email }} </p>
@@ -20,28 +20,32 @@
          <p> <strong> One Month Plan: </strong> <span class="badge badge-success"> Available </span> </p>
          @endif
 
-         @if($row->three_month_plan == 0)
-          <p> <strong> Three Month Plan: </strong> <span class="badge badge-warning"> No Plan </span> </p>
+         @if($row->three_month_plan == 1)
+          <p> <strong> Three Month Plan: </strong> <span class="badge badge-success"> Available </span> </p>
+         
          @else
-         <p> <strong> Three Month Plan: </strong> <span class="badge badge-success"> Available </span> </p>
+        \ <p> <strong> Three Month Plan: </strong> <span class="badge badge-warning"> No Plan </span> </p>
          @endif
 
-         @if($row->six_month_plan == 0)
-          <p> <strong> Six Month Plan: </strong> <span class="badge badge-warning"> No Plan </span> </p>
+         @if($row->six_month_plan == 1)
+          <p> <strong> Six Month Plan: </strong> <span class="badge badge-success"> Available </span> </p>
+         
          @else
-         <p> <strong> Six Month Plan: </strong> <span class="badge badge-success"> Available </span> </p>
+           <p> <strong> Six Month Plan: </strong> <span class="badge badge-warning"> No Plan </span> </p>
          @endif
 
-         @if($row->twelve_month_plan == 0)
-          <p> <strong> Twelve Month Plan: </strong> <span class="badge badge-warning"> No Plan </span> </p>
+         @if($row->twelve_month_plan == 1)
+           <p> <strong> Twelve Month Plan: </strong> <span class="badge badge-success"> Available </span> </p>
+         
          @else
-         <p> <strong> Twelve Month Plan: </strong> <span class="badge badge-success"> Available </span> </p>
+        <p> <strong> Twelve Month Plan: </strong> <span class="badge badge-warning"> No Plan </span> </p>
          @endif 
 
-         @if($row->is_active == 0)
-          <p> <strong> Status: </strong> <span class="badge badge-danger"> In Active </span> </p>
+         @if($row->is_active == 1)
+            <p> <strong> Status: </strong> <span class="badge badge-success"> Active </span> </p>
          @else
-         <p> <strong> Status: </strong> <span class="badge badge-success"> Active </span> </p>
+       
+         <p> <strong> Status: </strong> <span class="badge badge-danger"> In Active </span> </p>
          @endif 
        
         </p>

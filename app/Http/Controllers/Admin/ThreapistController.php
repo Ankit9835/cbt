@@ -15,6 +15,10 @@ class ThreapistController extends Controller
     	return view('admin.therapist.index',compact('therapists'));
     }
 
+    public function create(){
+        return view('admin.therapist.create');
+    }
+
     public function store(Request $request){
 
     	$this->validation($request);
@@ -33,8 +37,14 @@ class ThreapistController extends Controller
 	          'alert-type'=>'success'
 	        );
 
-    	return redirect()->back()->with($notification);
+    	return redirect()->route('admin.therapists')->with($notification);
 
+    }
+
+    public function edit($id){
+
+        $therapist = Therapist::find($id);
+        return view('admin.therapist.edit',compact('therapist'));
     }
 
     public function update(Request $request, $id){
@@ -54,7 +64,7 @@ class ThreapistController extends Controller
 	          'alert-type'=>'success'
 	        );
 
-    	return redirect()->back()->with($notification);
+    	return redirect()->route('admin.therapists')->with($notification);
 
 
     }
@@ -93,7 +103,7 @@ class ThreapistController extends Controller
     		
     		'first_name' => 'required',
     		'last_name' => 'required',
-    		'email' => 'required|unique:users,email,'.$id,
+    		'email' => 'required|unique:therapists,email,'.$id,
 
     	]);
 
