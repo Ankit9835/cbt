@@ -8,7 +8,7 @@
 
                                         <h4 class="modal-hdng">Create new Therapist</h4>
 
-                                        <form method = "POST" action = "{{ route('store.therapist') }}">
+                                        <form id = "contactform">
                                             @csrf
                                         <div class="modal-body">
 
@@ -73,11 +73,64 @@
                                                         class="fa fa-chevron-left"></i> Clear</a> -->
                                                 <button type = "submit" class="submit-btn orange-btn">Create <i
                                                         class="fa fa-chevron-right"></i></button>
+
                                             </div>
+                                             <span id="alert" style="color:red; font-size:20px;"></span>
 
                                         </div>
                                     </form>
                                     </div>
                                 </div>
                             </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+ <script>
+    $(document).ready(function(){
+    $('#contactform').on('submit', function(e){
+      e.preventDefault();
+       // var orgname = $("#orgname").val();
+       // var name = $("#name").val();
+       // var email = $("#email").val();
+       // var address = $("#address").val();
+      // var id = $(this).data('id');
+      //alert(this.id);
+      $.ajax({
+        type: "POST",
+        url: "../../admin/store/therapist/",
+        data: $('#contactform').serialize(),
+        success: function(response){
+          //console.log(response)
+         // $('#createNewOrganizationModal').location.reload();
+
+         $('#createNewOrganizationModal').modal('hide'); 
+
+         document.getElementById('success').innerHTML = 'Therapist Inserted SuccessFully';
+
+          $('#createNewOrganizationModal').on('hidden.bs.modal', function (e) {
+            location.reload();
+        });
+
+
+
+
+          
+         
+
+        
+          
+        },
+        error: function(error) {
+         
+           document.getElementById('alert').innerHTML = 'All Fields Are Compulsory Or Something Went Wrong!';
+
+            $('#createNewOrganizationModal').on('hidden.bs.modal', function (e) {
+                location.reload();
+            });
+        }
+      });
+    });
+    });
+  </script>
 

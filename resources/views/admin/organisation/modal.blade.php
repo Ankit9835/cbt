@@ -1,5 +1,13 @@
-<div class="modal-body">
-                                        <form method = "POST" action="{{ route('store.organisation') }}">
+<div class="modal fade common-modal createNewOrganizationModal"
+                                id="createNewOrganizationModal">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+
+                                        <h4 class="modal-hdng">Create new Organisation</h4>
+                                        <form id = "organisationmodal">
                                             @csrf
                                             <div class="option-bx">
                                                 <div class="hdng">
@@ -116,5 +124,59 @@
                                                 <button type = "submit" class="submit-btn orange-btn">Create <i
                                                         class="fa fa-chevron-right"></i></button>
                                             </div>
+                                            <span id="alert" style="color:red; font-size:20px;"></span>
                                         </form>
- </div>
+                                    </div>
+                                       </div>
+                            </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+ <script>
+    $(document).ready(function(){
+    $('#organisationmodal').on('submit', function(e){
+      e.preventDefault();
+       // var orgname = $("#orgname").val();
+       // var name = $("#name").val();
+       // var email = $("#email").val();
+       // var address = $("#address").val();
+      // var id = $(this).data('id');
+      //alert(this.id);
+      $.ajax({
+        type: "POST",
+        url: "../../admin/store/organisation/",
+        data: $('#organisationmodal').serialize(),
+        success: function(response){
+          //console.log(response)
+         // $('#createNewOrganizationModal').location.reload();
+
+         $('#createNewOrganizationModal').modal('hide'); 
+
+         document.getElementById('success').innerHTML = 'Organisation Inserted SuccessFully';
+
+          $('#createNewOrganizationModal').on('hidden.bs.modal', function (e) {
+            location.reload();
+        });
+
+
+
+
+          
+         
+
+        
+          
+        },
+        error: function(error) {
+         
+           document.getElementById('alert').innerHTML = 'All Fields Are Compulsory Except Approved Plans Or Something Went Wrong!';
+
+            $('#createNewOrganizationModal').on('hidden.bs.modal', function (e) {
+                location.reload();
+            });
+        }
+      });
+    });
+    });
+  </script>
+

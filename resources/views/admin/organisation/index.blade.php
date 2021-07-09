@@ -10,6 +10,8 @@
             </div>
             <div class="small-white-bx dataTable-white-bx">
 
+                <span id="success" style="color:green;  font-size:20px;"></span>
+
                 <!-- start breadcumb section is here -->
                 <div class="breadcumb-sctn">
                     <ul>
@@ -41,12 +43,12 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="rght text-right">
-                               <!--  <a href="#" class="modal-open-link" type="button" data-toggle="modal"
-                                    data-target="#createNewOrganizationModal">Create new organization</a> -->
-                                    <a href="{{ route('organisation.create') }}">Create new organization</a>
+                                <a href="#" class="modal-open-link" type="button" data-toggle="modal"
+                                    data-target="#createNewOrganizationModal">Create new organization</a>
+                                  <!--   <a href="{{ route('organisation.create') }}">Create new organization</a> -->
                             </div>
 
-                            
+                            @include('admin.organisation.modal')
 
                         </div>
                     </div>

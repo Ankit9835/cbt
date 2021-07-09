@@ -14,7 +14,9 @@ class PatientController extends Controller
     //
     public function index(){
     	$patients = Patient::latest()->paginate(7);
-    	return view('admin.patients.index',compact('patients'));
+        $org = Organisation::latest()->where('is_active', 1)->get();
+        $therapists = Therapist::latest()->where('is_active', 1)->get();
+    	return view('admin.patients.index',compact('patients','org','therapists'));
     }
 
     public function create(){
